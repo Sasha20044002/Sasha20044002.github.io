@@ -1,0 +1,87 @@
+body{
+    font-size: 15px;
+}
+h1 {
+    text-align: center;
+}
+div {
+    font-size: 20px;
+}
+code {
+    background-color: lightslategray;
+    border: 0.2px solid;
+}
+a {
+    color: orange;
+}
+pre {
+    background-color: lightsteelblue;
+    border: 1px solid;
+}
+.html{
+    background-color: orangered;
+    border: 1px solid;
+    padding-left: 10px;
+}
+.css{
+    background-color: steelblue;
+    border: 1px solid;
+    padding-left: 10px;
+}
+.underline {
+    text-decoration: underline;
+}
+.line-through{
+    text-decoration: line-through;
+}
+.overline{
+    text-decoration: overline;
+}
+.solid{
+    text-decoration-line: underline;
+    text-decoration-style: solid;
+}
+.double{
+    text-decoration-line: underline;
+    text-decoration-style: double;
+}
+.dotted{
+    text-decoration-line: underline;
+    text-decoration-style: dotted;
+}
+.dashed{
+    text-decoration-line: underline;
+    text-decoration-style: dashed;
+}
+.wavy {
+    text-decoration-line: underline;
+    text-decoration-style: wavy;
+}
+.normal{
+    font-style: normal;
+}
+.italic {
+    font-style: italic;
+}
+.oblique{
+    font-style: oblique;
+}
+.lowercase{
+    text-transform: lowercase;
+}
+.uppercase{
+    text-transform: uppercase;
+}
+.capitalize{
+    text-transform: capitalize;
+}
+nav{
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    padding-right: 50px;
+}
+li {
+    line-height: 40px;
+}
+
