@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Условия и создания элментов</title>
+    <link rel="stylesheet" href="js.css">
+</head>
+
+<body>
+    <h1 class="heading1">Конспект "Условия и создания элементов"</h1>
+    <h2 class="heading2">Как подключить на страницу несколько скриптов</h2>
+    <p class="text">Чтобы подключить на страницу ещё один файл с кодом на JavaScript, снова используем тег <span class="code-text">script</span>:</p>
+    <p class="code">
+        &lt;body&gt;
+        <br>
+            &lt;script src="theme.js"&gt;&lt;script&gt; <br>
+            &lt;script src="likes.js"&gt;&lt;script&gt; <br>
+        &lt;/body&gt;
+    </p>
+    <p class="text">Браузер обрабатывает инструкции последовательно: сначала в первом файле, потом во втором — как будто они все находятся в одном месте. Программы часто разбивают на несколько файлов, обычно одному файлу соответствует одна задача: например, управление темами или подписка на рассылку.</p>
+    <h2 class="heading2">Числа</h2>
+    <p class="text">Переменной можно присвоить значение — число. Числа не нужно оборачивать в кавычки:</p>
+    <p class="code">let number = 0;</p>
+    <p class="text">Чтобы увеличить или уменьшить число в JavaScript, можно использовать разные записи:</p>
+    <p class="code">
+        // Полная запись<br>
+number = number + 2; // Значение переменной: 2
+number = number - 2; // Значение переменной: 0
+<br>
+// Краткая запись<br>
+
+number += 2; // Значение переменной: 2
+number -= 2; // Значение переменной: 0
+<br>
+// Увеличение числа на 1 <br>
+number++; // Значение переменной: 1
+<br>
+// Уменьшение числа на 1 <br>
+number--; // Значение переменной: 0
+    </p>
+    <h2 class="heading2">Метод classList.contains</h2>
+    <p class="text">Метод <span class="code-text">classList.contains</span> проверяет, есть ли у вас класс</p>
+    <p class="code">элемент.classList.contains('класс');</p>
+    <p class="text">Метод вернет <span class="code-text">true</span> (истина), если класс у элемента есть, и <span class="code-text">false</span> (ложь), если класса нет. Значение <span class="code-text">true</span> и <span class="code-text">false</span> называются булевыми. Таких значений всего два.</p>
+    <h2 class="heading">Условная конструкция</h2>
+    <p class="text">Условная конструкция позволяет выполнять действия в зависимости от условия. Условие — это инструкция, которая возвращает <span class="code-text">true</span> или <span class="code-text">false</span>. Выглядит условная конструкция так:</p>
+    <p class="code">
+        if (условие) { <br>
+            // Инструкции, которые выполнятся, если условие истинно <br>
+          } else { <br>
+            // Инструкции, которые выполнятся, если условие ложно <br>
+          }
+    </p>
+    <h3 class="heading3">if</h3>
+    <p class="text">Условие записывают в круглых скобках после слова <span class="code-text">if</span> (переводится с английского как «если»). После этого внутри фигурных скобок пишут инструкции, которые выполнятся, если условие истинно. Условие считается истинным, если инструкция внутри круглых скобок возвращает <span class="code-text">true</span>.</p>
+    <h3 class="heading3">else</h3>
+    <p class="text">Конструкция <span class="code-text">else</span> (переводится как «иначе») говорит JavaScript, что делать, если условие ложно. Внутри фигурных скобок после <spam class="code-text">else </spam> пишут инструкции, которые должны выполниться, если условие вернёт <span class="code-text">false</span>.</p>
+    <h2 class="heading">Метод append</h2>
+    <p class="code">элемент-родитель.append(добавляемый-элемент);</p>
+    <p class="text">Метод <span class="code-text">append</span> добавляет указанный в скобках элемент в конец элемента-родителя. При этом содержимое элемента-родителя не затирается. Добавлять с помощью этого метода можно и элементы, и простые строки.</p>
+    <h2 class="heading2">Метод createElement</h2>
+    <p class="code">document.createElement('имя тега');</p>
+    <p class="text">Чтобы создать новый элемент на странице, к которой подключён скрипт, нужно использовать слово document. Внутри скобок в кавычках указывают элемент, который нужно создать. Например:</p>
+    <p class="code">// Создаём новый элемент &lt;div&lt; и записываем его в переменную<br>
+        let newElement = document.createElement('div');
+    </p>
+    <p class="text">
+        Новый элемент будет доступен из скрипта, но в разметке не появится, пока мы не скажем JavaScript, где разместить новый элемент. Для этого можно использовать метод <span class="code-text">append</span>:
+    </p>
+    <p class="code">
+        // Находим элемент-родитель<br>
+let parent = document.querySelector('.parent'); <br>
+<br>
+// Добавляем новый элемент на страницу <br>
+parent.append(newElement);
+    </p>
+    <p class="text">Элементы, созданные с помощью метода <span class="code-text">creatElement</span>, можно изменять так же, как и любые другие.</p>
+    <h2 class="heading2">Очищаем поле ввода</h2>
+    <p class="text">Чтобы пользователь по ошибке не отправил форму несколько раз, после отправки поле ввода лучше очистить. Для этого в его свойство <span class="code-text">value</span> записывают пустую строку. Вот так:</p>
+    <p class="code">
+        let input = document.querySelector('input'); <br>
+input.value = '';
+    </p>
+</body>
+
+</html>
